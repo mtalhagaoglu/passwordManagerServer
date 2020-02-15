@@ -1,6 +1,6 @@
 this project for making your own password manager application that running on your personel server.
 
-api using flask for requests so you need to do "pip3 install flask" and "pip3 isntall flask-cors"
+api using flask for requests so you need to do "pip3 install flask" and "pip3 isnstall flask-cors"
 
 i am using pycryto for encrypt everything you send me so you need to also do "pip3 install pycrypto"
 

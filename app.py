@@ -89,7 +89,7 @@ def login(email,password):
             return {"status": "password wrong"}
 
 
-def saveAccount(id,account,password,key,username):
+def saveAccount(id,account,password,key,username,folder):
     db  = sqlite3.connect("passwords.db")
     c = db.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS accounts (id int,accounts text,last_active)")
@@ -120,7 +120,7 @@ def saveAccount(id,account,password,key,username):
         else:
             pass
     if lock == 1:
-        newData.append({"name": account,"password": password,"username": username})
+        newData.append({"name": account,"password": password,"username": username,"folder": folder})
 
     print(f"newData is {newData}")
     print(len(newData))
@@ -170,4 +170,3 @@ def getAccounts(id):
         return {"status": "succesfully", "data": data}
     except:
         return {"status": "succesfully", "data": []}
-

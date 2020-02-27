@@ -61,11 +61,12 @@ def saveFunc():
         accountName = data["accountName"]
         username = data["username"]
         password = data["password"] #Encrypted with user's master key
+        folder = data["folder"]
         answer = tokenCheck(token)
         if answer["status"]:
             id = answer["id"]
             key = answer["key"] 
-            response = application.saveAccount(id,accountName,password,key,username)
+            response = application.saveAccount(id,accountName,password,key,username,folder)
             return jsonify(response)
         else:
             return jsonify({"status": "wrong token"})

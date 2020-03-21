@@ -108,7 +108,9 @@ def saveAccount(id,account,password,key,username,folder):
     newData = []
     for i in data:
         if (i["name"] == account):
+            i["username"] = username
             i["password"] = password
+            i["folder"] = folder
             newData.append(i)
         else:
             newData.append(i)
